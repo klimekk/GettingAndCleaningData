@@ -7,8 +7,7 @@ output: html_document
 
 
 # The following document explain basic steps to create tidy data for assignment
-# starting point was to create the following date frames based on the files attached
-# in the zip code:
+ starting point was to create the following date frames based on the files attached in the zip code:
 ## test.lbl read y_test.csv with activities column for test set
 ## test.data read x_test.csv with all measurements for test set
 ## train.lbl read y_train.csv with activities column for train set
@@ -16,19 +15,21 @@ output: html_document
 ## features read feautures.txt with column names for both: train and test data frame
 ## act.labels read activity_labels.txt with descriptions for activities
 
-# train.data and test.data were created with default V1..V561 column names
-# train.lbl and test.lbl has only obne column: V1
+train.data and test.data were created with default V1..V561 column names
+train.lbl and test.lbl has only one column: V1
 
 
-# using names stored in features will cause issue with merging data later, 
-# (so caled duplication column error) so I decided to cleanup column names vector
-#  using the names (V1 to V561) stored in vector traincols (=names(train.data)) - 
-# I did replace the names of columns, which plan to use later for extract
-# for example: 
-## first element V1 was replaced by "tBodyAcc-mean()-X" - because it's a mean col
-## but elementV8 remianed the same
-## see the result below (this is newset vector):
- [1] "tBodyAcc-mean()-X"               "tBodyAcc-mean()-Y"              
+using names stored in features will cause issue with merging data later, 
+ (so caled duplication column error) so I decided to cleanup column names vector
+  using the names (V1 to V561) stored in vector traincols (=names(train.data)) - 
+ I did replace the names of columns, which plan to use later for extract
+ for example: 
+
+ first element V1 was replaced by "tBodyAcc-mean()-X" - because it's a mean col
+ but elementV8 remained the same
+ see the result below (this is newset vector):
+
+  [1] "tBodyAcc-mean()-X"               "tBodyAcc-mean()-Y"              
   [3] "tBodyAcc-mean()-Z"               "tBodyAcc-std()-X"               
   [5] "tBodyAcc-std()-Y"                "tBodyAcc-std()-Z"               
   [7] "V7"                              "V8"                             
@@ -310,45 +311,49 @@ output: html_document
 [559] "V559"                            "V560"                           
 [561] "V561"    
 
-# in the next step - newset been applied to train.data and test.data as col names
-# using renamestdmean function
 
-# the next step was to attach activity descriptions to train.lbl and test.lbl
-## head(train.mrglbls) is:
-        V1  V2
-1       5  STANDING
-2       5  STANDING
-3       5  STANDING
-4       5  STANDING
-5       5  STANDING
-6       5  STANDING
+ in the next step - newset been applied to train.data and test.data as col names
+ using renamestdmean function
 
-# now we rename columns to be labelno and labeldesc
-# train.lbl contains activity and activity desc for train
-# test.lbl contains activity and activity desc for tes
-# next step is to combine together activities with measurement data in both
-# data frames: train.data now incorporates also train.lbl and
-#              test.data incorporates test.lbl
-# in both data frames we have the following cycles:
-# labelno - labeldesc - tBodyAcc-mean()-X - tBodyAcc-mean()-Y- tBodyAcc-mean()-Z
-# tBodyAcc-std()-X-tBodyAcc-std()-Y-tBodyAcc-std()-Z- V8 - V9 etc...
+ the next step was to attach activity descriptions to train.lbl and test.lbl
+ head(train.mrglbls) is:
+##        V1  V2
+## 1       5  STANDING
+## 2       5  STANDING
+## 3       5  STANDING
+## 4       5  STANDING
+## 5       5  STANDING
+## 6       5  STANDING
 
-#now we are ready to combine both data frames (train.data and test.data) in one:
-#  full.data<-rbind(train.data,test.data)
+ now we rename columns to be labelno and labeldesc
+ train.lbl contains activity and activity desc for train
+ test.lbl contains activity and activity desc for tes
+ next step is to combine together activities with measurement data in both
+ data frames: train.data now incorporates also train.lbl and
+              test.data incorporates test.lbl
+ in both data frames we have the following cycles:
 
-# the next step was to slice so created full.data into 3 slices:
-# first contained labelno and labeldsc
-# second all columns containing "std" in column name
-# third one all columns containg "mean" in column name
-# the next operation was to combine those 3 slices in one
-# that way we don't have any not relevant columns (which don't heave std or mean)
+### labelno - labeldesc - tBodyAcc-mean()-X - tBodyAcc-mean()-Y- tBodyAcc-mean()-Z
+### tBodyAcc-std()-X-tBodyAcc-std()-Y-tBodyAcc-std()-Z- V8 - V9 etc...
 
-# slices names are selected.labels, selected.full1 and selected.full2
-# result of merge is called selected.full
+now we are ready to combine both data frames (train.data and test.data) in one:
+  full.data<-rbind(train.data,test.data)
 
-# we are almost there - the next step now is create vector of names we want to
-# display in tidy data as a columns names - titles
-# using dcast we create tidy data frame with summarization for each of the 6 
-# activities of average (mean) :
-# tidy<-dcast(selected.full,labelno+labeldesc~titles,mean)
-# and this is the final result, which we write to file 
+ the next step was to slice so created full.data into 3 slices:
+ first contained labelno and labeldsc
+ second all columns containing "std" in column name
+ third one all columns containg "mean" in column name
+ the next operation was to combine those 3 slices in one
+ that way we don't have any not relevant columns (which don't heave std or mean)
+
+ slices names are selected.labels, selected.full1 and selected.full2
+ result of merge is called selected.full
+
+ we are almost there - the next step now is create vector of names we want to
+ display in tidy data as a columns names - titles
+ using dcast we create tidy data frame with summarization for each of the 6 
+ activities of average (mean) :
+
+ tidy<-dcast(selected.full,labelno+labeldesc~titles,mean)
+ 
+ and this is the final result, which we write to file 
