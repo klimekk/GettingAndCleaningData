@@ -1,0 +1,171 @@
+DATA DICTIONARY - AVERAGE STD AND MEAN MEASURES FOR EACH ACTIVITY
+  labelno    
+      activities - values from 1 to 6                     
+  labeldesc                      
+      activities description: one of the values :
+            WALKING
+ (respons to 1) , WALKING_UPSTAIRS
+ (response to 2) WALKING_DOWNSTAIRS
+ (respons to 3)  
+            SITTING (respons to 4),  STANDING (respons to 5) 
+LAYING (respons to 6)
+
+  fBodyAcc-mean()-X  
+            average for measurement              
+  fBodyAcc-mean()-Y       
+            average for measurement       
+  fBodyAcc-mean()-Z 
+            average for measurement              
+  fBodyAcc-meanFreq()-X  
+            average for measurement        
+  fBodyAcc-meanFreq()-Y       
+            average for measurement    
+  fBodyAcc-meanFreq()-Z       
+'           average for measurement   
+  fBodyAcc-std()-X           
+            average for measurement     
+  fBodyAcc-std()-Y           
+            average for measurement    
+  fBodyAcc-std()-Z             
+            average for measurement   
+  fBodyAccJerk-mean()-X         
+            average for measurement 
+  fBodyAccJerk-mean()-Y           
+            average for measurement
+  fBodyAccJerk-mean()-Z          
+            average for measurement
+  fBodyAccJerk-meanFreq()-X       
+            average for measurement
+  fBodyAccJerk-meanFreq()-Y      
+            average for measurement
+  fBodyAccJerk-meanFreq()-Z       
+            average for measurement
+  fBodyAccJerk-std()-X           
+            average for measurement
+  fBodyAccJerk-std()-Y          
+            average for measurement  
+  fBodyAccJerk-std()-Z           
+            average for measurement
+  fBodyAccMag-mean()              
+            average for measurement
+  fBodyAccMag-meanFreq()         
+            average for measurement
+  fBodyAccMag-std()               
+            average for measurement
+  fBodyBodyAccJerkMag-mean()     
+            average for measurement
+  fBodyBodyAccJerkMag-meanFreq()  
+            average for measurement
+  fBodyBodyAccJerkMag-std()      
+            average for measurement
+  fBodyBodyGyroJerkMag-mean()     
+            average for measurement
+  fBodyBodyGyroJerkMag-meanFreq()
+            average for measurement
+  fBodyBodyGyroJerkMag-std()      
+            average for measurement
+  fBodyBodyGyroMag-mean()        
+            average for measurement
+  fBodyBodyGyroMag-meanFreq()     
+            average for measurement
+  fBodyBodyGyroMag-std()         
+            average for measurement
+  fBodyGyro-mean()-X              
+            average for measurement
+  fBodyGyro-mean()-Y            
+            average for measurement 
+  fBodyGyro-mean()-Z              
+            average for measurement
+  fBodyGyro-meanFreq()-X         
+            average for measurement
+  fBodyGyro-meanFreq()-Y          
+            average for measurement
+  fBodyGyro-meanFreq()-Z       
+            average for measurement  
+  fBodyGyro-std()-X       
+            average for measurement        
+  fBodyGyro-std()-Y        
+            average for measurement      
+  fBodyGyro-std()-Z       
+            average for measurement        
+  tBodyAcc-mean()-X      
+            average for measurement        
+  tBodyAcc-mean()-Y        
+            average for measurement       
+  tBodyAcc-mean()-Z      
+            average for measurement        
+  tBodyAcc-std()-X        
+            average for measurement        
+  tBodyAcc-std()-Y          
+            average for measurement     
+  tBodyAcc-std()-Z          
+            average for measurement      
+  tBodyAccJerk-mean()-X         
+            average for measurement 
+  tBodyAccJerk-mean()-Y       
+            average for measurement    
+  tBodyAccJerk-mean()-Z       
+            average for measurement   
+  tBodyAccJerk-std()-X          
+            average for measurement  
+  tBodyAccJerk-std()-Y        
+            average for measurement   
+  tBodyAccJerk-std()-Z     
+            average for measurement       
+  tBodyAccJerkMag-mean()      
+            average for measurement   
+  tBodyAccJerkMag-std()     
+            average for measurement      
+  tBodyAccMag-mean()     
+            average for measurement        
+  tBodyAccMag-std()           
+            average for measurement    
+  tBodyGyro-mean()-X         
+            average for measurement    
+  tBodyGyro-mean()-Y      
+            average for measurement        
+  tBodyGyro-mean()-Z       
+            average for measurement      
+  tBodyGyro-std()-X       
+            average for measurement        
+  tBodyGyro-std()-Y          
+            average for measurement    
+  tBodyGyro-std()-Z           
+            average for measurement    
+  tBodyGyroJerk-mean()-X     
+            average for measurement    
+  tBodyGyroJerk-mean()-Y      
+            average for measurement    
+  tBodyGyroJerk-mean()-Z      
+            average for measurement   
+  tBodyGyroJerk-std()-X      
+            average for measurement     
+  tBodyGyroJerk-std()-Y        
+            average for measurement  
+  tBodyGyroJerk-std()-Z        
+            average for measurement   
+  tBodyGyroJerkMag-mean()       
+            average for measurement 
+  tBodyGyroJerkMag-std()       
+            average for measurement   
+  tBodyGyroMag-mean()          
+            average for measurement  
+  tBodyGyroMag-std()          
+            average for measurement    
+  tGravityAcc-mean()-X         
+            average for measurement  
+  tGravityAcc-mean()-Y     
+            average for measurement       
+  tGravityAcc-mean()-Z       
+            average for measurement    
+  tGravityAcc-std()-X        
+            average for measurement     
+  tGravityAcc-std()-Y      
+            average for measurement      
+  tGravityAcc-std()-Z       
+            average for measurement      
+  tGravityAccMag-mean()      
+            average for measurement  
+  tGravityAccMag-std()
+            average for measurement
+
